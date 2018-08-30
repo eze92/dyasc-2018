@@ -2,7 +2,7 @@ package ar.edu.untref.dyasc;
 
 public class Program {
 
-    private static int limite = 0;
+  private static int limite = 0;
 
     public static void main(String[] args) {
 
@@ -25,11 +25,11 @@ public class Program {
         if(escribeArchivo(args[1])) {
             String archivo = obtainNameFile(args[1]);
             FiboW fiboW = new FiboW();
-            String contenido = obtainTextToShow(args[2], sucesionF, unFibo, esVertical);
+            String contenido = obtenerTexto(args[2], sucesionF, unFibo, esVertical);
             fiboW.write(archivo, contenido);
             output = "fibo<" + limite + "> guardado en " + archivo;
         } else {
-            output = obtainTextToShow(args[1], sucesionF, unFibo, esVertical);
+            output = obtenerTexto(args[1], sucesionF, unFibo, esVertical);
         }
         return output;
     }
@@ -56,7 +56,7 @@ public class Program {
     }
 
 
-    private static String obtainTextToShow(String argument, String sucesion, fibo unFibo, Boolean esVertical) {
+    private static String obtenerTexto(String argument, String sucesion, fibo unFibo, Boolean esVertical) {
         StringBuffer stringBuffer = new StringBuffer();
         if(sumaFibo(argument)) {
             stringBuffer.append("fibo<" + limite + ">s: ");
@@ -90,7 +90,6 @@ public class Program {
         }
         return arguments;
     }
-
 	
 
 }
