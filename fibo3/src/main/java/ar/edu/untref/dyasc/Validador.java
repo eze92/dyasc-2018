@@ -16,7 +16,7 @@ public class Validador {
 	    }
 
 	    private Boolean checkFirstArgument(String firstArgument) {
-	        return (firstArgument.equals(OPTION_VD) || firstArgument.equals(OPTION_VI) || firstArgument.equals(OPTION_HD) || 			firstArgument.equals(OPTION_HI));
-	}
+	        return (firstArgument.equals(OPTION_VD) || firstArgument.equals(OPTION_VI) || firstArgument.equals(OPTION_HD) ||firstArgument.equals(OPTION_HI));
+	    }
 
 }
