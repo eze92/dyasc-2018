@@ -6,17 +6,17 @@ import org.junit.Assert;
 import org.junit.Test;
 
 public class CuentaCorrienteTest {
-	
-	 @Test
-	    public void agregoCompra(){
 
-	        Compra unaCompra = new Compra(new Date());
-	        unaCompra.setProducto(new ArticuloDeLibreria(30.0, "Libro", "L0"));
-	        CuentaCorriente unaCuenta = new CuentaCorriente();
+    @Test
+    public void agregoCompra() {
 
-	        unaCuenta.agregoCompra(unaCompra);
+        Compra unaCompra = new Compra(new Date());
+        unaCompra.setProducto(new ArticuloDeLibreria(30.0, "Libro", "L0"));
+        CuentaCorriente unaCuenta = new CuentaCorriente();
 
-	        Assert.assertNotNull(unaCuenta.getCompras());
-	    }
+        unaCuenta.agregoCompra(unaCompra);
+
+        Assert.assertNotNull(unaCuenta.getCompras());
+    }
 
 }

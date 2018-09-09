@@ -3,9 +3,8 @@ package ar.edu.untref.dyasc;
 import org.junit.Assert;
 import org.junit.Test;
 
-
 public class ProductoTest {
-	
+
     private static Double IVA = 1.21;
 
     @Test
@@ -17,15 +16,15 @@ public class ProductoTest {
 
         Assert.assertEquals(new Double(10), precio);
     }
-    
+
     @Test
     public void obterPreciodeArticuloConIva() {
 
-        Producto lapizColorNegro = new ArticuloDeLibreria(20d, "Cuaderno","A4");
+        Producto lapizColorNegro = new ArticuloDeLibreria(20d, "Cuaderno", "A4");
 
         Double precio = lapizColorNegro.getPrecioDeVenta();
-        Double precioMasIVA = 20.00 *IVA;
+        Double precioMasIVA = 20.00 * IVA;
 
-         Assert.assertEquals(precioMasIVA, precio);
+        Assert.assertEquals(precioMasIVA, precio);
     }
 }

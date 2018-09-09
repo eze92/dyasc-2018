@@ -1,8 +1,8 @@
 package ar.edu.untref.dyasc;
 
-public class ArticuloDeLibreria extends Producto{
+public class ArticuloDeLibreria extends Producto {
 
-	private static final Double IVA = 1.21;
+    private static final Double IVA = 1.21;
 
     public ArticuloDeLibreria(Double precio, String descripcion, String codigo) {
         this.precio = precio * IVA;
@@ -10,4 +10,3 @@ public class ArticuloDeLibreria extends Producto{
         this.codigo = codigo;
     }
 }
-
