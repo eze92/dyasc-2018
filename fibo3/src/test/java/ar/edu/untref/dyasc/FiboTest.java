@@ -10,14 +10,14 @@ public class FiboTest {
 
 	@Test
 	public void getSuccessionShouldReturn5Values() {
-		List<Integer> resultado = fibo.calculoFibo(5);
+		List<Integer> resultado = Fibo.calculoFibo(5);
 	}
 
 	@Test
 	public void devuelve5Valores() {
 		Integer limite = 5;
 		Boolean estaInvertido = false;
-		fibo fibonacci = new fibo(limite, estaInvertido);
+		Fibo fibonacci = new Fibo(limite, estaInvertido);
 		List<Integer> resultado = fibonacci.getSucesion();
 
 		int[] actualsValues = new int[resultado.size()];
@@ -32,7 +32,7 @@ public class FiboTest {
 	public void devuelve8Valores() {
 		Integer limite = 8;
 		Boolean estaInvertido = false;
-		fibo fibonacci = new fibo(limite, estaInvertido);
+		Fibo fibonacci = new Fibo(limite, estaInvertido);
 		List<Integer> resultado = fibonacci.getSucesion();
 
 		int[] actualsValues = new int[resultado.size()];
@@ -47,7 +47,7 @@ public class FiboTest {
 	public void devuelve4ValoresInvertidos() {
 
 		Boolean estaInvertido = true;
-		fibo fibonacci = new fibo(4, estaInvertido);
+		Fibo fibonacci = new Fibo(4, estaInvertido);
 		Integer[] expectedsValues = new Integer[] { 2, 1, 1, 0 };
 
 		List<Integer> results = fibonacci.getSucesion();

@@ -2,17 +2,16 @@ package ar.edu.untref.dyasc;
 
 public class Program {
 
-  private static int limite = 0;
+    private static int limite = 0;
 
     public static void main(String[] args) {
 
         boolean estaCorrecto = new Validador().chequeoArgumento(args);
         if (estaCorrecto) {
             args = argumentoCompleto(args);
-            fibo unFibo = creaFibo(args);
-
-            Boolean esVertical = ("-o=vd".equals(args[0]) || "-o=vi".equals(args[0]));
-            String sucesionF = darFormaAFibonacci(unFibo, esVertical);
+            Fibo unFibo = creaFibo(args);
+            Boolean esVertical = args[0].matches("-o=[v][a-zA-Z]");
+            String sucesionF = darFormaAFibonacci(unFibo, args[0]);
             String salida = obtenerSalida(args, unFibo, esVertical, sucesionF);
             System.out.println(salida);
         } else {
@@ -20,9 +19,9 @@ public class Program {
         }
     }
 
-    private static String obtenerSalida(String[] args, fibo unFibo, Boolean esVertical, String sucesionF) {
+    private static String obtenerSalida(String[] args, Fibo unFibo, Boolean esVertical, String sucesionF) {
         String output;
-        if(escribeArchivo(args[1])) {
+        if (escribeArchivo(args[1])) {
             String archivo = obtenerNombreArchivo(args[1]);
             FiboW fiboW = new FiboW();
             String contenido = obtenerTexto(args[2], sucesionF, unFibo, esVertical);
@@ -34,10 +33,10 @@ public class Program {
         return output;
     }
 
-    private static fibo creaFibo(String[] args) {
+    private static Fibo creaFibo(String[] args) {
         limite = obtenerLimite(args);
-        Boolean estaInvertido = ("-o=hi".equals(args[0]) || "-o=vi".equals(args[0]));
-        return new fibo(limite, estaInvertido);
+        Boolean estaInvertido = args[0].matches("-o=[a-zA-Z][i]");
+        return new Fibo(limite, estaInvertido);
     }
 
     private static String obtenerNombreArchivo(String argument) {
@@ -45,22 +44,21 @@ public class Program {
         return arrayArgument[1];
     }
 
-    private static String darFormaAFibonacci(fibo unFibo, Boolean esVertical) {
+    private static String darFormaAFibonacci(Fibo unFibo, String args) {
         FormaFibonacci forma;
-        if (esVertical) {
+        if (args.matches("-o=[v][a-zA-Z]")) {
             forma = new FiboVertical();
         } else {
             forma = new FiboHorizontal();
         }
         return forma.devolverForma(unFibo.getSucesion());
-}
+    }
 
-
-    private static String obtenerTexto(String argument, String sucesion, fibo unFibo, Boolean esVertical) {
+    private static String obtenerTexto(String argument, String sucesion, Fibo unFibo, Boolean esVertical) {
         StringBuffer stringBuffer = new StringBuffer();
-        if(sumaFibo(argument)) {
+        if (sumaFibo(argument)) {
             stringBuffer.append("fibo<" + limite + ">s: ");
-            if(esVertical) {
+            if (esVertical) {
                 stringBuffer.append("\n");
             }
             stringBuffer.append(unFibo.sumarSucesion());
@@ -86,10 +84,9 @@ public class Program {
     private static String[] argumentoCompleto(String[] args) {
         String[] arguments = args;
         if (arguments.length == 1) {
-            arguments = new String[]{"-o=hd", args[0]};
+            arguments = new String[] { "-o=hd", args[0] };
         }
         return arguments;
     }
-	
 
 }
