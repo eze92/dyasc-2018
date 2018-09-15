@@ -1,4 +1,0 @@
-Ejercicio fibonacci 3
-===========
-
-
