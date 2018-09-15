@@ -12,7 +12,7 @@ public class ValidadorTest {
     	Validador validator = new Validador();
         String[] arguments = new String[]{"-o=vd", "-f=salida.txt", "5"};
 
-        Boolean esCorrecto = validator.checkArguments(arguments);
+        Boolean esCorrecto = validator.chequeoArgumento(arguments);
 
         Assert.assertTrue(esCorrecto);
     }
@@ -23,7 +23,7 @@ public class ValidadorTest {
     	Validador validator = new Validador();
         String[] arguments = new String[]{"-o=vd", "-f=salida.txt", "5", "NA", "NA"};
 
-        Boolean isRight = validator.checkArguments(arguments);
+        Boolean isRight = validator.chequeoArgumento(arguments);
 
         Assert.assertFalse(isRight);
     }
