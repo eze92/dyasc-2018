@@ -6,8 +6,8 @@ import java.io.IOException;
 
 public class FiboW {
 
-	 public void write(String fileName, String text) {
-	        File aFile = createFile(fileName);
+	 public void escribir(String fileName, String text) {
+	        File aFile = creaArchivo(fileName);
 	        FileWriter fw = null;
 	        try {
 	            fw = new FileWriter(aFile.getAbsoluteFile());
@@ -23,7 +23,7 @@ public class FiboW {
 	        }
 	    }
 
-	    private File createFile(String fileName) {
+	    private File creaArchivo(String fileName) {
 	        File aFile = new File(fileName);
 	        if (!aFile.exists()) {
 	            try {
