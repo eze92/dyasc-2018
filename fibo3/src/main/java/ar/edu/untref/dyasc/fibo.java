@@ -12,7 +12,7 @@ public class fibo{
 	private List<Integer> sucesion;
 	
 	public fibo(Integer limite, Boolean estaInvertido) {
-		sucesion = this.calculoFibo(limite);
+		sucesion = fibo.calculoFibo(limite);
         if(estaInvertido) {
         	sucesion = this.invertirSucesion();
         }
