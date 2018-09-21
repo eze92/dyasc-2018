@@ -49,5 +49,3 @@ public class Bitacora {
         return mensajeDeSalida;
     }
 }
-
-// }

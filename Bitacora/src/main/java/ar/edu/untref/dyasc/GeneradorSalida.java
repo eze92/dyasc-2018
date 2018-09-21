@@ -2,11 +2,11 @@ package ar.edu.untref.dyasc;
 
 public class GeneradorSalida {
 
-    public Salida generar(String salida) {
-        if (salida.equals("CONSOLA")) {
+    public Salida generar(String unaSalida) {
+        if (unaSalida.equals("CONSOLA")) {
             return new SalidaPantalla();
         } else {
-            return new SalidaArhivo(salida);
+            return new SalidaArhivo(unaSalida);
         }
     }
 
