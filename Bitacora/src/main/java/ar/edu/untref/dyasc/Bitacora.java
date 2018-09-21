@@ -15,15 +15,15 @@ public class Bitacora {
         this.creadorDeSalidas = new GeneradorSalida();
     }
 
-    public void registrarEvento(String mensaje) {
+    public void registrarEvento(String unMensaje) {
         try {
-            String mensajeDeSalida = this.formateadorDeMensaje(mensaje);
-            String configuracionDeSalida = System.getProperty("bitacora.destino");
-            List<Salida> salidasEvento = this.parsearEntrada(configuracionDeSalida);
-            Iterator<Salida> iterador = salidasEvento.iterator();
+            String mensaje = this.formatoMensaje(unMensaje);
+            String config = System.getProperty("bitacora.destino");
+            List<Salida> salidaL = this.recorrerValor(config);
+            Iterator<Salida> iterador = salidaL.iterator();
             while (iterador.hasNext()) {
                 Salida salida = iterador.next();
-                salida.mostrar(mensajeDeSalida);
+                salida.mostrar(mensaje);
             }
         } catch (NullPointerException e) {
             System.out.println("Variable de entorno no encontrada");
@@ -31,17 +31,17 @@ public class Bitacora {
 
     }
 
-    private List<Salida> parsearEntrada(String parametros) {
-        StringTokenizer token = new StringTokenizer(parametros, ",");
+    private List<Salida> recorrerValor(String lista) {
+        StringTokenizer token = new StringTokenizer(lista, ",");
         List<Salida> unaSalida = new ArrayList<>();
         while (token.hasMoreTokens()) {
-            String parametroDeSalida = token.nextToken();
-            unaSalida.add(creadorDeSalidas.generar(parametroDeSalida));
+            String proximoToken = token.nextToken();
+            unaSalida.add(creadorDeSalidas.generar(proximoToken));
         }
         return unaSalida;
     }
 
-    private String formateadorDeMensaje(String unMensaje) {
+    private String formatoMensaje(String unMensaje) {
         LocalDateTime fecha = LocalDateTime.now();
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm");
         String fechaConFormato = fecha.format(formatter);

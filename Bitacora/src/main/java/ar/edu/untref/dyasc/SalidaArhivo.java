@@ -7,8 +7,8 @@ public class SalidaArhivo implements Salida {
 
     private String archivoSalida;
 
-    public SalidaArhivo(String archivo) {
-        this.archivoSalida = archivo;
+    public SalidaArhivo(String unArchivo) {
+        this.archivoSalida = unArchivo;
     }
 
     public void mostrar(String unMensaje) {
