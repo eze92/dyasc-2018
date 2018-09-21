@@ -9,10 +9,10 @@ import java.util.StringTokenizer;
 
 public class Bitacora {
 
-    private GeneradorSalida creadorDeSalidas;
+    private GeneradorSalida generador;
 
     public Bitacora() {
-        this.creadorDeSalidas = new GeneradorSalida();
+        this.generador = new GeneradorSalida();
     }
 
     public void registrarEvento(String unMensaje) {
@@ -36,7 +36,7 @@ public class Bitacora {
         List<Salida> unaSalida = new ArrayList<>();
         while (token.hasMoreTokens()) {
             String proximoToken = token.nextToken();
-            unaSalida.add(creadorDeSalidas.generar(proximoToken));
+            unaSalida.add(generador.generar(proximoToken));
         }
         return unaSalida;
     }
