@@ -32,3 +32,12 @@ fibo<5> guardado en salida.txt
 ## Y el archivo salida.txt debe tener el siguiente contenido
 fibo<5>s:
 7
+
+##Correciones
+Anteriormente se modularizo la clase Program para separar las funcionalidades 
+
+1) La clase Fibo solo debería tener la responsabilidad de calcular la sucesión y no de como mostrarla.
+2) Tenes lógica sobre la forma de mostrar la sucesión en varias clases. Deberías encapsular eso en una sola clase.
+3) La interface que creaste te hubiera ayudado un poco con lo anterior pero no la utilizaste del todo bien.
+4) Tenes un test que no hace ninguna comprobación. Y en esa misma clase un import que no se usa.
+5) Sobre hacer un refactor muy grande, pensá que mientras más y mejores pruebas tengas, más fácil es hacerlo. Y si, a veces hay que cortar y surcir. 
