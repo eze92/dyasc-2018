@@ -33,7 +33,7 @@ fibo<5> guardado en salida.txt
 fibo<5>s:
 7
 
-##Correciones
+## Correciones
 Anteriormente se modularizo la clase Program para separar las funcionalidades 
 
 1) La clase Fibo solo debería tener la responsabilidad de calcular la sucesión y no de como mostrarla.
