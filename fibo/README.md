@@ -10,3 +10,6 @@ fibo<5>: 0 1 1 2 3
 # Ejemplo 2
 java -jar fibo.jar 8
 fibo<8>: 0 1 1 2 3 5 8 13
+
+## Correcciones
+Hay un espacio que falta en la salida. 
