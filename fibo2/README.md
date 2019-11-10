@@ -42,3 +42,11 @@ Opciones no validas.
 ## Ejemplo 4, sin -o
 java -jar fibo.jar 8
 fibo<8>: 0 1 1 2 3 5 8 13
+
+## Correcciones 
+
+1) Pasan los casos de ejemplo.
+2) Algunos problemas de indentación.
+3) No hay archivos basura
+4) Pequeña diferencia en la salida según los ejemplos.
+5) Nombre de clase en minuscula
